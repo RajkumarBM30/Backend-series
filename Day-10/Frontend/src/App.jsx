@@ -11,7 +11,7 @@ function App() {
   console.log("hello world")
   
   function fetchNotes(){
-     axios.get('http://localhost:3000/notes')
+     axios.get(' https://backend-series-fegn.onrender.com/notes')
      .then((res)=>{
       setNotes(res.data.note)
   })
@@ -29,7 +29,7 @@ function App() {
     const {title, description} = e.target.elements
     console.log(title.value, description.value)
 
-    axios.post('http://localhost:3000/notes', {
+    axios.post(' https://backend-series-fegn.onrender.com/notes', {
       title: title.value,
       description: description.value
      })
@@ -40,7 +40,7 @@ function App() {
   }
 
    function handleDelete(noteid){
-     axios.delete(`http://localhost:3000/notes/${noteid}`)
+     axios.delete(` https://backend-series-fegn.onrender.com/notes/${noteid}`)
      .then((res)=>{
        console.log(res.data)
        fetchNotes()
